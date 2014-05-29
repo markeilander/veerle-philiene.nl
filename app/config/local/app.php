@@ -15,4 +15,33 @@ return array(
 
 	'debug' => true,
 
+	/*
+	|--------------------------------------------------------------------------
+	| Application URL
+	|--------------------------------------------------------------------------
+	|
+	| This URL is used by the console to properly generate URLs when using
+	| the Artisan command line tool. You should set this to the root of
+	| your application so that it is used when running Artisan tasks.
+	|
+	*/
+
+	'url' => 'http://eilander.kd.io/projects/veerle-philiene.nl/public/',
+	
+	/*
+	|--------------------------------------------------------------------------
+	| Autoloaded Service Providers
+	|--------------------------------------------------------------------------
+	|
+	| The service providers listed here will be automatically loaded on the
+	| request to your application. Feel free to add your own services to
+	| this array to grant expanded functionality to your applications.
+	|
+	*/
+
+	'providers' => append_config(array(
+
+        'Barryvdh\Debugbar\ServiceProvider',
+	)),
+
 );
