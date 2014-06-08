@@ -120,6 +120,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Frozennode\XssInput\XssInputServiceProvider',
+        'Barryvdh\Elfinder\ElfinderServiceProvider'
 	),
 
 	/*
@@ -185,7 +187,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+		'Input'           => 'Frozennode\XssInput\XssInput'
 	),
 
 );

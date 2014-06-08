@@ -49,7 +49,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'album',
+			'database'  => 'veerle-philiene',
 			'username'  => 'admin',
 			'password'  => 'eenmaal',
 			'charset'   => 'utf8',

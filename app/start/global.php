@@ -31,7 +31,8 @@ ClassLoader::addDirectories(array(
 |
 */
 
-Log::useFiles(storage_path().'/logs/laravel.log');
+$logFile = 'laravel.log';
+Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,13 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+App::error(function(Illuminate\Session\TokenMismatchException $exception, $code)
+{
+    Log::error($exception);
+	// stuur terug naar het inlog formulier met een melding
+	return Redirect::to('login')->with('message', HTML::alert('danger', 'Session expired'));
 });
 
 /*
@@ -78,4 +86,7 @@ App::down(function()
 |
 */
 
+require app_path().'/macros/html.php';
+require app_path().'/macros/form.php';
+require app_path().'/validators.php';
 require app_path().'/filters.php';

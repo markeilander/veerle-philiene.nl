@@ -1,6 +1,11 @@
 var currentSlide = 1;
 var maxSlides = $("div.slide").length;
 jQuery(document).ready(function ($) {
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 2000);
     // scroll
     var pause = 10;
     $(document).scroll(function(e) {
@@ -190,10 +195,10 @@ function menu_focus( element, i ) {
 
 function enable_arrows( dataslide ) {
 	$('#arrows div').addClass('disabled');
-	if ( dataslide != 1 ) {
+	if ( dataslide != 1 && dataslide != maxSlides ) {
 		$('#arrow-up').removeClass('disabled');
 	}
-	if ( dataslide != 5 ) {
+	if ( dataslide == 1 ) {
 		$('#arrow-down').removeClass('disabled');
 	}
 }

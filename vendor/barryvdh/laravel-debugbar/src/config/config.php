@@ -93,7 +93,7 @@ return array(
         'default_request' => true, // Regular or special Symfony request logger
         'symfony_request' => true,  // Only one can be enabled..
         'mail'            => false,  // Catch mail messages
-        'logs'            => true, // Add the latest log messages
+        'logs'            => false, // Add the latest log messages
         'files'           => false, // Show the included files
         'config'          => true, // Display config settings
         'auth'            => true, // Display Laravel authentication status

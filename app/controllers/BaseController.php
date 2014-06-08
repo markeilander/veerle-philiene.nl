@@ -1,6 +1,14 @@
 <?php
 
 class BaseController extends Controller {
+    
+    protected $_angularController = '';
+    
+    public function __construct()
+    {
+        $this->beforeFilter('csrf', array('on' => array('post', 'delete', 'put')));
+        $this->beforeFilter('ajax', array('on' => array('post','delete', 'put')));
+    }
 
 	/**
 	 * Setup the layout used by the controller.

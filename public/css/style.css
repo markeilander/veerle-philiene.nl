@@ -295,7 +295,7 @@ body {
     position: absolute;
     top: -12%;
     bottom: -12%;
-    opacity: 0.25;
+    opacity: 0.40;
     font-size: 3.2em;
     width: 100%;
     text-align: center;
@@ -389,6 +389,9 @@ body {
 #cadeau {
 	background-color: #D7D5CA;
 	color: #222;
+}
+#cadeau .intro-cadeau {
+    padding: 20px 0;
 }
 /* END Slide 6 */
 /* Timeline */

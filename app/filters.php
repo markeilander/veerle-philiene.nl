@@ -77,4 +77,11 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+	// angular protection
+	if (Request::header('X-XSRF-TOKEN')) {
+	    throw new Illuminate\Session\TokenMismatchException;
+	    if (Session::token() != Request::header('X-XSRF-TOKEN')) {
+    	    throw new Illuminate\Session\TokenMismatchException;
+    	}
+	}
 });
