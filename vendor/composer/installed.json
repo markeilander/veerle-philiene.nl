@@ -1876,50 +1876,5 @@
             "laravel",
             "xss"
         ]
-    },
-    {
-        "name": "barryvdh/laravel-elfinder",
-        "version": "v0.1.1",
-        "version_normalized": "0.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/barryvdh/laravel-elfinder.git",
-            "reference": "f5fa9fcb665f5b9e3f770a61cce783e2ab299201"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/barryvdh/laravel-elfinder/zipball/f5fa9fcb665f5b9e3f770a61cce783e2ab299201",
-            "reference": "f5fa9fcb665f5b9e3f770a61cce783e2ab299201",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "4.x",
-            "php": ">=5.3.0"
-        },
-        "time": "2014-04-23 17:28:43",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/elFinder"
-            ],
-            "psr-0": {
-                "Barryvdh\\Elfinder": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Barry vd. Heuvel",
-                "email": "barryvdh@gmail.com"
-            }
-        ],
-        "description": "A Laravel Package to integrate elFinder 2",
-        "keywords": [
-            "elfinder",
-            "filebrowser",
-            "laravel",
-            "tinymce"
-        ]
     }
 ]

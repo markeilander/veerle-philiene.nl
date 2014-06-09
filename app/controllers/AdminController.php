@@ -17,19 +17,19 @@ class AdminController extends BaseController {
 	
 	public function veerle()
 	{
-	    $veerle = Veerle::paginate(10);
+	    $veerle = Veerle::all();
 		return View::make('/admin/veerle')->with('veerle', $veerle);
 	}
 	
 	public function philiene()
 	{
-	    $philiene = Philiene::paginate(10);
+	    $philiene = Philiene::all();
 		return View::make('/admin/philiene')->with('philiene', $philiene);
 	}
 	
 	public function cadeaus()
 	{
-	    $cadeaus = Cadeau::paginate(10);
+	    $cadeaus = Cadeau::paginate(5);
         return View::make('/admin/cadeaus')->with('cadeaus', $cadeaus);
 	}
 

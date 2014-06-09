@@ -26,7 +26,11 @@ HTML::macro('alert', function($type, $message, $head = null)
     }
 });
 
-HTML::macro('euroFormat', function($value, $decimals = 2)
+HTML::macro('euroFormat', function($value, $decimals = 2, $euro = true)
 {
-    return '&euro; ' .number_format($value, $decimals, ',', '.');
+    if ($euro) {
+        return '&euro; ' .number_format($value, $decimals, ',', '.');
+    } else {
+        return number_format($value, $decimals, ',', '.');
+    }
 });

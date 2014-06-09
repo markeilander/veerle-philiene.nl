@@ -36,7 +36,7 @@ class CadeauController extends BaseController {
         $cadeau->omschrijving = Input::get('omschrijving');
         $cadeau->winkel = Input::get('winkel');
         $cadeau->url = Input::get('url');
-        $cadeau->afbeelding = Input::file('afbeelding');
+        $cadeau->afbeelding = $this->uploadImage('afbeelding');
         $cadeau->prijs = Input::get('prijs');
         $cadeau->aantal = Input::get('aantal');
         if ($cadeau->save()) {
@@ -62,12 +62,12 @@ class CadeauController extends BaseController {
 	        return Redirect::back()->withInput()->withErrors(Cadeau::getValidationMessages());
 	    }
 	    // Save
-	    $cadeau = new Cadeau;
+	    $cadeau = Cadeau::find($id);
         $cadeau->titel = Input::get('titel');
         $cadeau->omschrijving = Input::get('omschrijving');
         $cadeau->winkel = Input::get('winkel');
         $cadeau->url = Input::get('url');
-        $cadeau->afbeelding = Input::file('afbeelding');
+        $cadeau->afbeelding = $this->uploadImage('afbeelding', $cadeau->afbeelding);
         $cadeau->prijs = Input::get('prijs');
         $cadeau->aantal = Input::get('aantal');
         if ($cadeau->save()) {
@@ -94,9 +94,25 @@ class CadeauController extends BaseController {
         }
 	}
 
-    private function uploadImage(File $file) {
-        echo '<pre>';var_dump($file);
-        //public_path().$this->_path
+    private function uploadImage($fileInput, $default = '') {
+        if (Input::hasFile($fileInput)) {
+            // make randowm string and set destination
+            $destinationPath = $this->_path;
+            $fileToken = str_random(4).'-'.str_random(6).'-'.str_random(3); // make as random as possible
+            // make path
+            if (!file_exists(public_path().$destinationPath)) {
+                File::makeDirectory(public_path().$destinationPath, 0775, true);
+            }
+            // get file object
+            $file = Input::file($fileInput);
+            $filename = $fileToken.'.'.$file->getClientOriginalExtension();
+            // move
+            $upload_success = $file->move(public_path().$destinationPath, $filename);
+            if( $upload_success ) {
+                return $destinationPath.$filename;
+            }
+        }
+        return $default;
     }
 
 }

@@ -14,7 +14,10 @@ class HomeController extends BaseController {
     
 	public function index()
 	{
-		return View::make('/home/index');
+	    $data = array (
+	        'cadeaus' => Cadeau::all(),
+	    );
+		return View::make('/home/index', $data);
 	}
 
 }

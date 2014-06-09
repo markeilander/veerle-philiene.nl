@@ -27,6 +27,7 @@
                                     <th>Aantal</th>
                                     <th>Winkel</th>
                                     <th>Prijs</th>
+                                    <th>Afbeelding</th>
                                     <th style="width: 70px;"></th>
                                 </tr>
                             </thead>
@@ -38,9 +39,16 @@
                         		<tr>
                         		@endif
                         			<td>{{{ $cadeau->titel }}}</td>
-                        			<td>{{{ $cadeau->besteld }}}/{{{ $cadeau->aantal }}}</td>
+                        			<td>{{{ $cadeau->aantal - $cadeau->besteld }}}/{{{ $cadeau->aantal }}}</td>
                         			<td>{{{ $cadeau->winkel }}}</td>
                         			<td>{{{ Html::euroFormat($cadeau->prijs) }}}</td>
+                        			<td>
+                        			@if ($cadeau->afbeelding != '')
+                        			    {{ HTML::image($cadeau->afbeelding, $cadeau->titel, array('class' => 'img-responsive img-thumbnail', 'style' => 'max-height: 70px;')) }}
+                        			@else
+                        			    {{ HTML::image('http://placekitten.com/g/300/350', 'Toevoegen', array('class' => 'img-responsive img-thumbnail', 'style' => 'max-height: 70px;')) }}
+                        			@endif    
+                        			</td>
                         			<td>
                         			    <a href="{{ action('CadeauController@edit', $cadeau->id) }}">
                             			    <button class="btn btn-primary btn-xs">

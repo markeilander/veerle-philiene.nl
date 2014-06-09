@@ -9,7 +9,7 @@ class Cadeau extends BaseModel {
         'omschrijving'  => 'Required|alphaText|Between:1,64',
         'winkel'        => 'Required|alphaText|Between:1,128',
         'url'           => 'Url|Between:5,512',
-        'afbeelding'    => 'Required|image',
+        'afbeelding'    => '',
         'prijs'         => 'Required|Numeric|Between:1,500',
         'aantal'        => 'Required|Integer|Between:1,6',
     );

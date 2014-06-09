@@ -45,7 +45,7 @@
                     @endif
                         {{ Form::bootstrapLabel('afbeelding', 'Afbeelding') }}
                         <div class="col-sm-10">
-                            
+                            {{ Form::file('afbeelding') }}
                         </div>
                     </div>
                     @if($errors->has('prijs'))

@@ -16,108 +16,53 @@
                 </div>
             </div>
 			<div class="row">
-                <div class="col-xs-12 col-sm-4">
+			    @foreach ($cadeaus as $cadeau)
+			    @if ($cadeau->besteld != $cadeau->aantal)
+			    <div class="col-xs-12 col-sm-6">
                      <div class="well profile">
-                        <div class="col-sm-12">
-                            <div class="col-xs-12 col-sm-7">
-                                <h2>Rompertje</h2>
+                        <div class="row" style="height: 220px;">
+                            <div class="col-xs-7">
+                                <h2>{{{$cadeau->titel}}}</h2>
+                                <div class="row">
+                                    <div class="col-xs-12 cadeau-text">
+                                        <p>&nbsp;</p>
+                                        <p><strong>Waar te koop?: </strong> {{{$cadeau->winkel}}} </p>
+                                        <p>
+                                            {{ nl2br(e($cadeau->omschrijving)) }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>             
-                            <div class="col-xs-12 col-sm-5 text-center">
+                            <div class="col-xs-5 text-center">
                                 <figure>
-                                    <img src="http://img.hema.nl/products/5056-rood-33371711-product_rd-1140174540.jpg" alt="" class="img-circle img-responsive">
+                                    {{ HTML::image($cadeau->afbeelding, $cadeau->titel, array('class' => 'img-responsive img-rounded', 'height' => 150)) }}
                                 </figure>
-                            </div>
-                            <div class="col-xs-12">
-                                <p>
-                                    Lange mouwen<br/>
-                                    kleur rood<br/> 
-                                    Maat 56
-                                </p>
-                                <p><strong>Waar te koop?: </strong> HEMAdsdsdsdsds </p>
-                            </div>
-                        </div>            
-                        <div class="col-xs-12 divider text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2><span class="fa fa-times"></span></h2>
-                                <p><small>Beschikbaar</small></p>
-                                <button class="btn btn-default btn-block"  disabled="disabled">Ik koop dit </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2>€ <strong>4,99</strong></h2>
-                                <p><small>Prijs</small></p>
-                                <button class="btn btn-default btn-block"> Naar website </button>
+                            </div>  
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 divider text-center">
+                                <div class="col-xs-12 col-sm-6 emphasis">
+                                    <h2><span class="fa fa-check"></span></h2>
+                                    <p><small>Beschikbaar</small></p>
+                                    <button class="btn btn-default btn-block">Ik koop dit </button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 emphasis">
+                                    <h2>€ <strong>{{{ Html::euroFormat($cadeau->prijs, 2, false) }}}</strong></h2>
+                                    <p><small>Prijs</small></p>
+                                    @if ($cadeau->url !== '')
+                                    <a href="#" onclick="window.open('{{{$cadeau->url}}}','_blank')">
+                                        <button class="btn btn-default btn-block"> Naar website </button>
+                                    </a>
+                                    @else
+                                        <button class="btn btn-default btn-block" disabled="disabled"> Naar website </button>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                      </div>                       
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                     <div class="well profile">
-                        <div class="col-sm-12">
-                            <div class="col-xs-12 col-sm-7">
-                                <h2>Rompertje</h2>
-                            </div>             
-                            <div class="col-xs-12 col-sm-5 text-center">
-                                <figure>
-                                    <img src="http://img.hema.nl/products/5056-rood-33371711-product_rd-1140174540.jpg" alt="" class="img-circle img-responsive">
-                                </figure>
-                            </div>
-                            <div class="col-xs-12">
-                                <p>
-                                    Lange mouwen<br/>
-                                    kleur rood<br/> 
-                                    Maat 56
-                                </p>
-                                <p><strong>Waar te koop?: </strong> HEMAdsdsdsdsds </p>
-                            </div>
-                        </div>            
-                        <div class="col-xs-12 divider text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2><span class="fa fa-check"></span></h2>
-                                <p><small>Beschikbaar</small></p>
-                                <button class="btn btn-default btn-block">Ik koop dit </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2>€ <strong>4,99</strong></h2>
-                                <p><small>Prijs</small></p>
-                                <button class="btn btn-default btn-block"> Naar website </button>
-                            </div>
-                        </div>
-                     </div>                       
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                     <div class="well profile">
-                        <div class="col-sm-12">
-                            <div class="col-xs-12 col-sm-7">
-                                <h2>Rompertje</h2>
-                            </div>             
-                            <div class="col-xs-12 col-sm-5 text-center">
-                                <figure>
-                                    <img src="http://img.hema.nl/products/5056-rood-33371711-product_rd-1140174540.jpg" alt="" class="img-circle img-responsive">
-                                </figure>
-                            </div>
-                            <div class="col-xs-12">
-                                <p>
-                                    Lange mouwen<br/>
-                                    kleur rood<br/> 
-                                    Maat 56
-                                </p>
-                                <p><strong>Waar te koop?: </strong> HEMAdsdsdsdsds </p>
-                            </div>
-                        </div>            
-                        <div class="col-xs-12 divider text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2><span class="fa fa-check"></span></h2>
-                                <p><small>Beschikbaar</small></p>
-                                <button class="btn btn-default btn-block">Ik koop dit </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <h2>€ <strong>4,99</strong></h2>
-                                <p><small>Prijs</small></p>
-                                <button class="btn btn-default btn-block"> Naar website </button>
-                            </div>
-                        </div>
-                     </div>                       
-                </div>
+                @endif
+			    @endforeach
             </div><!-- /row -->
 		</div><!-- /container -->
 	</div><!-- /Cadeau -->

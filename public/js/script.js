@@ -34,7 +34,6 @@ jQuery(document).ready(function ($) {
     // paralax
     //Cache some variables
 	var links = $('.nav').find('li');
-    var scrollableLinks = $('.scrollable').find('a');
     var arrows = $('#arrows div');
 	slide = $('.slide');
 	button = $('.button');
@@ -43,12 +42,6 @@ jQuery(document).ready(function ($) {
 	
 	//When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
 	links.click(function (e) {
-		e.preventDefault();
-		dataslide = $(this).attr('data-slide');
-		goToByScroll(dataslide);
-		$(".navbar-responsive-collapse").collapse('hide');
-	});
-    scrollableLinks.click(function (e) {
 		e.preventDefault();
 		dataslide = $(this).attr('data-slide');
 		goToByScroll(dataslide);
