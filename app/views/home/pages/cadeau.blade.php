@@ -6,9 +6,12 @@
                         Vind je het lastig om zelf een cadeautje te bedenken?    
                     </p>
                     <p>
-                        Wij helpen je graag, hieronder staan cadeautjes die wij graag zouden willen hebben.<br />
+                        Wij helpen je graag! Hieronder staan cadeautjes die wij graag zouden willen hebben.<br />
                         Klik op de knop "Ik koop dit" als je een cadeautje ziet dat je wilt kopen.<br />
                         Dan strepen wij deze af van ons lijstje en krijgen we het niet dubbel.
+                    </p>
+                    <p>
+                        Alvast bedankt!
                     </p>
                     <p>
                         Liefs Veerle en Philiene.
