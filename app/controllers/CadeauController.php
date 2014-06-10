@@ -71,7 +71,13 @@ class CadeauController extends BaseController {
         $cadeau->prijs = Input::get('prijs');
         $cadeau->aantal = Input::get('aantal');
         if ($cadeau->save()) {
-            return Redirect::to('admin/cadeaus')->with('message', HTML::alert('success', 'Cadeau <strong>'.$cadeau->titel.'</strong> gewijzigd', 'Gelukt'));
+            $redirect = 'admin/cadeaus';
+            // get current page
+            $page = Session::get('page.cadeaus');
+            if (is_numeric($page) && $page > 1) {
+                $redirect .= '?page='. $page;
+            }
+            return Redirect::to($redirect)->with('message', HTML::alert('success', 'Cadeau <strong>'.$cadeau->titel.'</strong> gewijzigd', 'Gelukt'));
         }
 	}
 

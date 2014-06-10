@@ -1,2 +1,3 @@
 /app/config/local/*
 /app/config/database.php
+/public/uploads/*

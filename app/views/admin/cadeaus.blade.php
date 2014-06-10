@@ -9,7 +9,10 @@
                 <!-- /.col-lg-12 -->
             </div>
              <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <?php echo $cadeaus->links(); ?>
+                </div>
+                <div class="col-sm-6">
                     <a href="{{ action('CadeauController@add') }}">
                         <button type="button" class="btn btn-default pull-right">
                             <i class="fa fa-plus"></i> Toevoegen
@@ -67,7 +70,6 @@
                         </table>
                     </div>
                     <!-- /.table-responsive -->
-                    <?php echo $cadeaus->links(); ?>
                 </div>
             </div>
         </div>

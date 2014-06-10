@@ -18,6 +18,10 @@ body {
     background-color: rgba( 227, 111, 138, .10 ); 
 }
 
+.pagination {
+    margin: 0;
+}
+
 /* Wrappers */
 
 /* ------------------------------- */

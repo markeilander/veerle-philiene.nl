@@ -29,7 +29,9 @@ class AdminController extends BaseController {
 	
 	public function cadeaus()
 	{
-	    $cadeaus = DB::table('cadeau')->orderBy('id', 'desc')->paginate(5);
+	    $cadeaus = DB::table('cadeau')->orderBy('id', 'desc')->paginate(1);
+	    // set current page in session
+	    Session::put('page.cadeaus', $cadeaus->getCurrentPage());
         return View::make('/admin/cadeaus')->with('cadeaus', $cadeaus);
 	}
 
