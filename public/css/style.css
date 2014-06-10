@@ -394,6 +394,13 @@ body {
     padding: 20px 0;
 }
 /* END Slide 6 */
+/* Koop */
+#koop {
+    display: none;
+	background-color: #F58DA4;
+	color: #222;
+}
+/* END Koop */
 /* Timeline */
 .timeline {
   position: relative;

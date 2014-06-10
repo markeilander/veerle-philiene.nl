@@ -29,7 +29,7 @@ class AdminController extends BaseController {
 	
 	public function cadeaus()
 	{
-	    $cadeaus = Cadeau::paginate(5);
+	    $cadeaus = DB::table('cadeau')->orderBy('id', 'desc')->paginate(5);
         return View::make('/admin/cadeaus')->with('cadeaus', $cadeaus);
 	}
 

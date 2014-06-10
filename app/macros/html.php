@@ -28,6 +28,9 @@ HTML::macro('alert', function($type, $message, $head = null)
 
 HTML::macro('euroFormat', function($value, $decimals = 2, $euro = true)
 {
+    if ($value == '0.01') {
+        return '?';
+    }
     if ($euro) {
         return '&euro; ' .number_format($value, $decimals, ',', '.');
     } else {

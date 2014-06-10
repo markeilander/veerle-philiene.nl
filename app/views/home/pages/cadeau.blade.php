@@ -43,11 +43,11 @@
                             </div>  
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 divider text-center">
+                            <div class="col-xs-12 divider text-center" style="height: 150px;">
                                 <div class="col-xs-12 col-sm-6 emphasis">
                                     <h2><span class="fa fa-check"></span></h2>
                                     <p><small>Beschikbaar</small></p>
-                                    <button class="btn btn-default btn-block">Ik koop dit </button>
+                                    <button class="buy btn btn-default btn-block" id="{{{$cadeau->id}}}">Ik koop dit </button>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 emphasis">
                                     <h2>€ <strong>{{{ Html::euroFormat($cadeau->prijs, 2, false) }}}</strong></h2>

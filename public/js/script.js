@@ -1,6 +1,20 @@
 var currentSlide = 1;
 var maxSlides = $("div.slide").length;
+var oldHtml = '';
 jQuery(document).ready(function ($) {
+    //buy
+    $("button.buy").click(function(){
+        return true;
+        var id = $(this).attr( "id" );
+        $( "#koop" ).show();
+        goToByScroll(6);
+        // html from selected element
+        var block = $(this).parent();
+        var container = $(block).parent();
+        var oldHtml = container.html();
+    });
+    
+    // other
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
             $(this).remove(); 

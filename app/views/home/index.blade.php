@@ -11,4 +11,6 @@
 	@include('home.pages.philiene')
 	<!-- === CADEAU === -->
 	@include('home.pages.cadeau')
+	<!-- === KOPEN === -->
+	@include('home.pages.koop')
 @stop
