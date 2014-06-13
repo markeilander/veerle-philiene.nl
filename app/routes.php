@@ -14,6 +14,8 @@
 Route::pattern('id', '[0-9]+');
 // Home
 Route::get('/', 'HomeController@index');
+Route::get('/cadeau/{id}', 'HomeController@cadeau');
+Route::post('/cadeau/{id}', 'HomeController@postCadeau');
 // Admin
 Route::get('/admin', 'AdminController@dashboard')->before('auth');
 Route::get('/admin/veerle', 'AdminController@veerle')->before('auth');

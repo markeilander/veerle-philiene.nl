@@ -2,16 +2,28 @@ var currentSlide = 1;
 var maxSlides = $("div.slide").length;
 var oldHtml = '';
 jQuery(document).ready(function ($) {
-    //buy
+    //csrf
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    //render buy form
     $("button.buy").click(function(){
-        return true;
         var id = $(this).attr( "id" );
         $( "#koop" ).show();
         goToByScroll(6);
-        // html from selected element
-        var block = $(this).parent();
-        var container = $(block).parent();
-        var oldHtml = container.html();
+        // get gift data
+        $.get( "cadeau/" + id, function( data ) {
+             $('#cadeau-content').html(data);
+        });
+    });
+    //send buy form
+    $(document).on('click', 'button#send', function(event) {
+        $.post( $("#buy-gift").attr("action"), $("#buy-gift").serialize(), function( data ) {
+             $('#cadeau-content').html(data);
+        });
+        event.preventDefault(); //STOP default action
     });
     
     // other

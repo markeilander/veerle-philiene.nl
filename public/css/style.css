@@ -115,12 +115,12 @@ body {
 		text-align: left;
 		white-space: nowrap;
 		background-color: #e36f8a;
-        background-color: rgba( 227, 111, 138, .35 );
+        background-color: rgba( 227, 111, 138, .65 );
 	}
     .nav li:hover {
         width: 100%;
 		background-color: #e36f8a;
-        background-color: rgba( 227, 111, 138, .35 );
+        background-color: rgba( 227, 111, 138, .45 );
 	}
 	.navbar-responsive-collapse  {
 		width: 100%;

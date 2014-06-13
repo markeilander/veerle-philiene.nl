@@ -43,7 +43,7 @@
                             </div>  
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 divider text-center" style="height: 150px;">
+                            <div class="col-xs-12 divider text-center">
                                 <div class="col-xs-12 col-sm-6 emphasis">
                                     <h2><span class="fa fa-check"></span></h2>
                                     <p><small>Beschikbaar</small></p>
