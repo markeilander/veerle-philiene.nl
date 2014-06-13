@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         headers: {
             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         }
-    });
+    }); 
     //render buy form
     $("button.buy").click(function(){
         var id = $(this).attr( "id" );
