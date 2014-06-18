@@ -249,7 +249,7 @@
                                                             <table align="Right" border="0" cellpadding="0" cellspacing="0" width="200" class="flexibleContainer">
                                                                 <tr>
                                                                     <td align="Left" valign="top" class="imageContent">
-                                                                        {{ HTML::image($cadeau->afbeelding, $cadeau->titel, array('class' => 'flexibleImage', 'width' => 200, 'style' => 'max-width:200px;')) }}
+                                                                        <img src="http://www.veerle-philiene.nl/{{$cadeau->afbeelding}}" class="flexibleImage" width="200" style="max-height: 200px;" alt="{{$cadeau->titel}}">
                                                                     </td>
                                                                 </tr>
                                                             </table>
