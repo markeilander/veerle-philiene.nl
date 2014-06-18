@@ -34,8 +34,8 @@ class PhilieneController extends BabyController {
 	    return parent::postEdit($id, $type, Philiene::find($id));
 	}
 	
-	public function delete($model = null)
+	public function delete($id, $model = null)
 	{
-	    return parent::delete(Philiene::find($id));
+	    return parent::delete($id, Philiene::find($id));
 	}
 }

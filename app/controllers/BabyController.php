@@ -80,7 +80,7 @@ class BabyController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function delete($baby)
+	public function delete($id, $baby)
 	{
         if ($baby->delete()) {
             // delete file
