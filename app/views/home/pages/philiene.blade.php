@@ -8,7 +8,7 @@
                 <div class="tl-header">{{{$datum}}}</div>
                 
                 @foreach ($berichten as $tijd=>$bericht)
-                    <div class="tl-entry {{ HTML::oddeven('veerle', 'left', '') }}">
+                    <div class="tl-entry {{ HTML::oddeven('philiene', 'left', '') }}">
                         <div class="tl-time">
         					{{{ $tijd }}}
         				</div>

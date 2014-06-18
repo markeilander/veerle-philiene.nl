@@ -1,4 +1,4 @@
-                <div class="tl-icon"><i class="fa fa-pencile-square-0"></i></div>
+                <div class="tl-icon"><i class="fa fa-pencil-square-o"></i></div>
 				<div class="panel tl-body">
 					<h4 class="font-thin">{{{ $bericht['titel'] }}}</h4>
 					<div style="margin-top: 10px;" class="text-sm">
