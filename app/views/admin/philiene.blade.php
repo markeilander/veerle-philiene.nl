@@ -66,7 +66,7 @@
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </button>
                                     </a>
-                                    <a href="{{ action('BabyController@delete', $bericht->id) }}">
+                                    <a href="{{ action('PhilieneController@delete', $bericht->id) }}">
                                         <button class="btn btn-danger btn-xs">
                                             <i class="glyphicon glyphicon-trash"></i>
                                         </button>

@@ -33,13 +33,13 @@ Route::get('/veerle/add/{type}', 'VeerleController@add')->before('auth');
 Route::post('/veerle/add/{type}', 'VeerleController@postAdd')->before('auth');
 Route::get('/veerle/edit/{id}/{type}', 'VeerleController@edit')->before('auth');
 Route::post('/veerle/edit/{id}/{type}', 'VeerleController@postEdit')->before('auth');
+Route::get('/veerle/delete/{id}', 'VeerleController@delete')->before('auth');
 // Philiene
 Route::get('/philiene/add/{type}', 'PhilieneController@add')->before('auth');
 Route::post('/philiene/add/{type}', 'PhilieneController@postAdd')->before('auth');
 Route::get('/philiene/edit/{id}/{type}', 'PhilieneController@edit')->before('auth');
 Route::post('/philiene/edit/{id}/{type}', 'PhilieneController@postEdit')->before('auth');
-// Baby
-Route::get('/baby/delete/{id}', 'BabyController@delete')->before('auth');
+Route::get('/philiene/delete/{id}', 'PhilieneController@delete')->before('auth');
 // Auth
 Route::get('/logout', 'AuthController@logout');
 Route::get('/login', 'AuthController@login')->before('guest');
