@@ -268,6 +268,8 @@
 																							   {{{$cadeau->winkel}}}<br /><br />
 																							   <h6>Prijs</h6>
 																							   {{{ Html::euroFormat($cadeau->prijs, 2, false) }}}<br /><br />
+																							   <h6>Website</h6>
+																							   {{{$cadeau->url}}}<br /><br />
                                                                     </td>
                                                                 </tr>
                                                             </table>
