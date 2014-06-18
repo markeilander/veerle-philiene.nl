@@ -693,8 +693,7 @@ body {
 .profile 
 {
     background-color: #fff;
-    min-height: 355px;
-    display: inline-block;
+    min-height: 360px;
     text-align: left;
 }
 .divider 

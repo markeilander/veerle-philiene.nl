@@ -38,7 +38,7 @@
                             </div>             
                             <div class="col-xs-5 text-center">
                                 <figure>
-                                    {{ HTML::image($cadeau->afbeelding, $cadeau->titel, array('class' => 'img-responsive img-rounded', 'height' => 150)) }}
+                                    {{ HTML::image($cadeau->afbeelding, $cadeau->titel, array('class' => 'img-responsive img-rounded', 'style' => 'max-height: 195px;')) }}
                                 </figure>
                             </div>  
                         </div>
