@@ -16,7 +16,7 @@
                         <i class="fa fa-user fa-5x"></i>
                       </div>
                       <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">0</p>
+                        <p class="announcement-heading">{{{ $veerle }}}</p>
                         <p class="announcement-text">Veerle</p>
                       </div>
                     </div>
@@ -40,7 +40,7 @@
                         <i class="fa fa-user fa-5x"></i>
                       </div>
                       <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">0</p>
+                        <p class="announcement-heading">{{{ $philiene }}}</p>
                         <p class="announcement-text">Philiene</p>
                       </div>
                     </div>
@@ -64,7 +64,7 @@
                         <i class="fa fa-gift fa-5x"></i>
                       </div>
                       <div class="col-xs-7 text-right">
-                        <p class="announcement-heading">12/40</p>
+                        <p class="announcement-heading">{{{ $besteld }}}/{{{ $aantal }}}</p>
                         <p class="announcement-text">Cadeau's gekocht</p>
                       </div>
                     </div>

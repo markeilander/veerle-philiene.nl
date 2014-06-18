@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
  **/
 $(window).on('resize', function(){
     $(document).scroll();
-    goToByScroll(currentSlide);
+    //goToByScroll(currentSlide);
 });
 
 //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The Jquery

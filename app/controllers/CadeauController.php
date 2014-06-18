@@ -39,6 +39,8 @@ class CadeauController extends BaseController {
         $cadeau->afbeelding = $this->uploadImage('afbeelding');
         $cadeau->prijs = Input::get('prijs');
         $cadeau->aantal = Input::get('aantal');
+        $cadeau->volgorde = Input::get('volgorde');
+        $cadeau->besteld = 0;
         if ($cadeau->save()) {
             return Redirect::to('admin/cadeaus')->with('message', HTML::alert('success', 'Cadeau <strong>'.$cadeau->titel.'</strong> aangemaakt', 'Gelukt'));
         }
@@ -70,6 +72,8 @@ class CadeauController extends BaseController {
         $cadeau->afbeelding = $this->uploadImage('afbeelding', $cadeau->afbeelding);
         $cadeau->prijs = Input::get('prijs');
         $cadeau->aantal = Input::get('aantal');
+        $cadeau->besteld = Input::get('besteld');
+        $cadeau->volgorde = Input::get('volgorde');
         if ($cadeau->save()) {
             $redirect = 'admin/cadeaus';
             // get current page

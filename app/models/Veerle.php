@@ -1,7 +1,6 @@
 <?php
 
-class Veerle extends Eloquent {
+class Veerle extends BaseModel {
     
     protected $table = 'veerle';
-    
 }

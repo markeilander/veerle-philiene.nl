@@ -8,11 +8,11 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-             <div class="row">
-                <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-8">
                     <?php echo $cadeaus->links(); ?>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <a href="{{ action('CadeauController@add') }}">
                         <button type="button" class="btn btn-default pull-right">
                             <i class="fa fa-plus"></i> Toevoegen
@@ -26,6 +26,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>Volgorde</th>
                                     <th>Titel</th>
                                     <th>Aantal</th>
                                     <th>Winkel</th>
@@ -41,6 +42,7 @@
                         		@else
                         		<tr>
                         		@endif
+                        		    <td>{{{ $cadeau->volgorde }}}</td>
                         			<td>{{{ $cadeau->titel }}}</td>
                         			<td>{{{ $cadeau->aantal - $cadeau->besteld }}}/{{{ $cadeau->aantal }}}</td>
                         			<td>{{{ $cadeau->winkel }}}</td>

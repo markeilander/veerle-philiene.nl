@@ -1,3 +1,13 @@
+                    @if($errors->has('volgorde'))
+                    <div class="form-group has-error">
+                    @else
+                    <div class="form-group">
+                    @endif
+                        {{ Form::bootstrapLabel('volgorde', 'Volgorde') }}
+                        <div class="col-sm-10">
+                            {{ Form::bootstrapNumeric('volgorde', '', 'Volgorde') }}
+                        </div>
+                    </div>
                     @if($errors->has('titel'))
                     <div class="form-group has-error">
                     @else
@@ -68,6 +78,18 @@
                             {{ Form::bootstrapNumeric('aantal', '', 'Aantal beschikbaar') }}
                         </div>
                     </div>
+                    @if(isset($cadeau))
+                        @if($errors->has('besteld'))
+                        <div class="form-group has-error">
+                        @else
+                        <div class="form-group">
+                        @endif
+                            {{ Form::bootstrapLabel('besteld', 'Aantal besteld') }}
+                            <div class="col-sm-10">
+                                {{ Form::bootstrapNumeric('besteld', 0, 'Aantal besteld') }}
+                            </div>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             @if(isset($cadeau))

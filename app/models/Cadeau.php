@@ -11,6 +11,8 @@ class Cadeau extends BaseModel {
         'url'           => 'Url|Between:5,512',
         'afbeelding'    => '',
         'prijs'         => 'Numeric|Between:0,500',
-        'aantal'        => 'Required|Integer|Between:1,6',
+        'aantal'        => 'Required|Integer|Between:1,12',
+        'besteld'       => 'Integer|Between:0,12',
+        'volgorde'      => 'Required|Integer|Between:1,999999',
     );
 }

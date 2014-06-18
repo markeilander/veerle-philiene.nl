@@ -12,6 +12,7 @@
 */
 // Patterns
 Route::pattern('id', '[0-9]+');
+Route::pattern('type', '[a-z\-]+');
 // Home
 Route::get('/', 'HomeController@index');
 Route::get('/cadeau/{id}', 'HomeController@cadeau');
@@ -27,14 +28,19 @@ Route::post('/cadeau/add', 'CadeauController@postAdd')->before('auth');
 Route::get('/cadeau/edit/{id}', 'CadeauController@edit')->before('auth');
 Route::post('/cadeau/edit/{id}', 'CadeauController@postEdit')->before('auth');
 Route::get('/cadeau/delete/{id}', 'CadeauController@delete')->before('auth');
+// Veerle
+Route::get('/veerle/add/{type}', 'VeerleController@add')->before('auth');
+Route::post('/veerle/add/{type}', 'VeerleController@postAdd')->before('auth');
+Route::get('/veerle/edit/{id}/{type}', 'VeerleController@edit')->before('auth');
+Route::post('/veerle/edit/{id}/{type}', 'VeerleController@postEdit')->before('auth');
+// Philiene
+Route::get('/philiene/add/{type}', 'PhilieneController@add')->before('auth');
+Route::post('/philiene/add/{type}', 'PhilieneController@postAdd')->before('auth');
+Route::get('/philiene/edit/{id}/{type}', 'PhilieneController@edit')->before('auth');
+Route::post('/philiene/edit/{id}/{type}', 'PhilieneController@postEdit')->before('auth');
+// Baby
+Route::get('/baby/delete/{id}', 'BabyController@delete')->before('auth');
 // Auth
 Route::get('/logout', 'AuthController@logout');
 Route::get('/login', 'AuthController@login')->before('guest');
 Route::post('/login', 'AuthController@postLogin')->before('guest');
-//Elfinder
-Route::group(array('before' => 'auth'), function()
-    {
-        \Route::get('elfinder', 'Barryvdh\Elfinder\ElfinderController@showIndex');
-        \Route::any('elfinder/connector', 'Barryvdh\Elfinder\ElfinderController@showConnector');
-        \Route::get('elfinder/ckeditor4', 'Barryvdh\Elfinder\ElfinderController@showCKeditor4');
-    });

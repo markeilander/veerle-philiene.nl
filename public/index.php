@@ -1,4 +1,7 @@
 <?php
+
+date_default_timezone_set('Europe/Amsterdam');
+setlocale (LC_TIME, 'nl_NL.utf8', 'nl_NL', 'nl', 'NL', 'Dutch');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

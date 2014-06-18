@@ -6,7 +6,7 @@
         
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" >
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script> -->
+        <!-- <script src="//cdn.ckeditor.com/4.4.1/standard/ckeditor.js"></script> -->
         {{ HTML::style('css/admin.css') }}
         <!-- To see grid outlines use this -->
         <!-- <link href="http://getbootstrap.com/examples/grid/grid.css" rel="stylesheet"> -->

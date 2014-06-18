@@ -5,7 +5,7 @@
                                 <div class="row">
                                     <div class="col-xs-12 cadeau-text">
                                         <p>&nbsp;</p>
-                                        <p><strong>Waar te koop?: </strong> {{{$cadeau->winkel}}} </p>
+                                        <p><strong>Waar te koop? </strong> {{{$cadeau->winkel}}} </p>
                                         <p>
                                             {{ nl2br(e($cadeau->omschrijving)) }}
                                         </p>

@@ -14,8 +14,13 @@ class HomeController extends BaseController {
     
 	public function index()
 	{
+	    $veerle = DB::table('veerle')->orderBy('created_at', 'asc')->get();
+	    $philiene = DB::table('philiene')->orderBy('created_at', 'asc')->get();
+	    $cadeaus = DB::table('cadeau')->orderBy('volgorde', 'asc')->get();
 	    $data = array (
-	        'cadeaus' => Cadeau::all(),
+	        'cadeaus' => $cadeaus,
+	        'veerleList' => $this->convertTableToTimeline($veerle),
+	        'philieneList' => $this->convertTableToTimeline($philiene),
 	    );
 		return View::make('/home/index', $data);
 	}
@@ -30,16 +35,8 @@ class HomeController extends BaseController {
     	        'posted' => false
     	    );
     	    return View::make('/home/ajax/cadeau')->with($data);
-        } else {
-            $email = 'mark.eilander@outlook.com';
-            $data = array (
-    	        'cadeau' => Cadeau::find($id)
-    	    );
-            Mail::send('emails.bedankt', $data, function($message)  use ($email)
-            {
-                $message->to($email, $email)->subject('Bedankt!');
-            });
         }
+        return App::abort(404);
 	}
 	
 	public function postCadeau($id)
@@ -52,7 +49,7 @@ class HomeController extends BaseController {
     	    $valid = Gekocht::validate(Input::all());
     	    if ($valid === true) {
         	    // Save cadeau
-                $cadeau->besteld = $besteld + 1;
+                $cadeau->increment('besteld');;
                 // Save gekocht
                 $gekocht = new Gekocht;
                 $gekocht->email = Input::get('email');
@@ -81,6 +78,29 @@ class HomeController extends BaseController {
     	    }
             return View::make('/home/ajax/cadeau')->with($data);
         }
+        return App::abort(404);
+	}
+	
+	private function convertTableToTimeline($table)
+	{
+	    $data = array();
+	    if (count($table)) {
+	        foreach($table as $row) {
+	            $year = HTML::dutchDate($row->created_at);
+	            $day = HTML::dutchDate($row->created_at);
+	            $time = HTML::dutchTime($row->created_at);
+	            // set propper order
+	            $data[$day][$time]['id'] = $row->id;
+	            // set data
+	            $data[$day][$time]['type'] = $row->type;
+	            $data[$day][$time]['titel'] = $row->titel;
+	            $data[$day][$time]['bericht'] = $row->bericht;
+	            $data[$day][$time]['afbeelding'] = $row->afbeelding;
+	            $data[$day][$time]['gewicht'] = $row->gewicht;
+	            $data[$day][$time]['lengte'] = $row->lengte;
+	        }   
+	    }
+	    return $data;
 	}
 
 }
