@@ -33,4 +33,9 @@ class VeerleController extends BabyController {
 	{
 	    return parent::postEdit($id, $type, Veerle::find($id));
 	}
+	
+	public function delete($model = null)
+	{
+	    return parent::delete(Veerle::find($id));
+	}
 }

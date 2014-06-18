@@ -80,10 +80,9 @@ class BabyController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function delete($id)
+	public function delete($baby)
 	{
-		$veerle = Veerle::find($id);
-        if ($veerle->delete()) {
+        if ($baby->delete()) {
             // delete file
             //File::delete($image);
             return Redirect::to($this->_redirect)->with('message', HTML::alert('danger', 'Verwijderd', 'Gelukt'));
