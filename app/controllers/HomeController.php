@@ -14,8 +14,8 @@ class HomeController extends BaseController {
     
 	public function index()
 	{
-	    $veerle = DB::table('veerle')->orderBy('created_at', 'asc')->get();
-	    $philiene = DB::table('philiene')->orderBy('created_at', 'asc')->get();
+	    $veerle = DB::table('veerle')->orderBy('created_at', 'desc')->get();
+	    $philiene = DB::table('philiene')->orderBy('created_at', 'desc')->get();
 	    $cadeaus = DB::table('cadeau')->orderBy('volgorde', 'asc')->get();
 	    $data = array (
 	        'cadeaus' => $cadeaus,
@@ -86,7 +86,6 @@ class HomeController extends BaseController {
 	    $data = array();
 	    if (count($table)) {
 	        foreach($table as $row) {
-	            $year = HTML::dutchDate($row->created_at);
 	            $day = HTML::dutchDate($row->created_at);
 	            $time = HTML::dutchTime($row->created_at);
 	            // set propper order

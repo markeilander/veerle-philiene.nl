@@ -120,7 +120,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-        'Frozennode\XssInput\XssInputServiceProvider'
+        'Frozennode\XssInput\XssInputServiceProvider',
+        'Eilander\Storage\StorageServiceProvider'
 	),
 
 	/*

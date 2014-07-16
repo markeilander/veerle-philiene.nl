@@ -1,8 +1,17 @@
 <?php
 
+//use Eilander\Storage\Cadeau\CadeauRepository as Cadeau;
+
 class CadeauController extends BaseController {
     
     protected $_path = '/uploads/cadeau/';
+    protected $_cadeau;
+    
+    public function __construct(Cadeau $cadeau)
+    {
+        parent::__construct();
+        $this->_cadeau = $cadeau;
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -26,12 +35,12 @@ class CadeauController extends BaseController {
 	}
 	public function postAdd()
 	{
-	    $valid = Cadeau::validate(Input::all());
+	    $valid = $this->_cadeau->validate(Input::all());
 	    if ($valid === false) {
 	        return Redirect::back()->withInput()->withErrors(Cadeau::getValidationMessages());
 	    }
 	    // Save
-	    $cadeau = new Cadeau;
+	    $cadeau = $this->_cadeau;
         $cadeau->titel = Input::get('titel');
         $cadeau->omschrijving = Input::get('omschrijving');
         $cadeau->winkel = Input::get('winkel');
@@ -54,17 +63,17 @@ class CadeauController extends BaseController {
 	 */
 	public function edit($id)
 	{
-	    $cadeau = Cadeau::find($id);
+	    $cadeau = $this->_cadeau->find($id);
 		return View::make('/cadeaus/edit')->with('cadeau', $cadeau);
 	}
 	public function postEdit($id)
 	{
-		$valid = Cadeau::validate(Input::all());
+		$valid = $this->_cadeau->validate(Input::all());
 	    if ($valid === false) {
 	        return Redirect::back()->withInput()->withErrors(Cadeau::getValidationMessages());
 	    }
 	    // Save
-	    $cadeau = Cadeau::find($id);
+	    $cadeau = $this->_cadeau->find($id);
         $cadeau->titel = Input::get('titel');
         $cadeau->omschrijving = Input::get('omschrijving');
         $cadeau->winkel = Input::get('winkel');
@@ -94,7 +103,7 @@ class CadeauController extends BaseController {
 	 */
 	public function delete($id)
 	{
-		$cadeau = Cadeau::find($id);
+		$cadeau = $this->_cadeau->find($id);
 		$titel = $cadeau->titel;
 		$image = $cadeau->afbeelding;
         if ($cadeau->delete()) {
@@ -103,26 +112,4 @@ class CadeauController extends BaseController {
             return Redirect::to('admin/cadeaus')->with('message', HTML::alert('danger', 'Cadeau <strong>'.$titel.'</strong> verwijderd', 'Gelukt'));
         }
 	}
-
-    private function uploadImage($fileInput, $default = '') {
-        if (Input::hasFile($fileInput)) {
-            // make randowm string and set destination
-            $destinationPath = $this->_path;
-            $fileToken = str_random(4).'-'.str_random(6).'-'.str_random(3); // make as random as possible
-            // make path
-            if (!file_exists(public_path().$destinationPath)) {
-                File::makeDirectory(public_path().$destinationPath, 0775, true);
-            }
-            // get file object
-            $file = Input::file($fileInput);
-            $filename = $fileToken.'.'.$file->getClientOriginalExtension();
-            // move
-            $upload_success = $file->move(public_path().$destinationPath, $filename);
-            if( $upload_success ) {
-                return $destinationPath.$filename;
-            }
-        }
-        return $default;
-    }
-
 }

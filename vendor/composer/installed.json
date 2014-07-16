@@ -238,59 +238,6 @@
         ]
     },
     {
-        "name": "patchwork/utf8",
-        "version": "v1.1.23",
-        "version_normalized": "1.1.23.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-            "reference": "c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc",
-            "reference": "c1edbc82aed49ff2bdef0a0f659bf69e3f7b14cc",
-            "shasum": ""
-        },
-        "require": {
-            "lib-pcre": ">=7.3",
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "ext-iconv": "Use iconv for best performance",
-            "ext-intl": "Use Intl for best performance",
-            "ext-mbstring": "Use Mbstring for best performance"
-        },
-        "time": "2014-05-22 13:59:09",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Patchwork": "class/",
-                "Normalizer": "class/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "(Apache-2.0 or GPL-2.0)"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
-        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
-        "keywords": [
-            "i18n",
-            "unicode",
-            "utf-8",
-            "utf8"
-        ]
-    },
-    {
         "name": "nesbot/carbon",
         "version": "1.9.0",
         "version_normalized": "1.9.0.0",
@@ -1836,18 +1783,71 @@
         ]
     },
     {
-        "name": "intervention/image",
-        "version": "2.0.4",
-        "version_normalized": "2.0.4.0",
+        "name": "patchwork/utf8",
+        "version": "v1.1.24",
+        "version_normalized": "1.1.24.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/Intervention/image.git",
-            "reference": "edd507dacfacab7fcfcee6c5fcfad3335d0ec85f"
+            "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
+            "reference": "40f552c019956f446553b19f7de2da2f9c74d730"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Intervention/image/zipball/edd507dacfacab7fcfcee6c5fcfad3335d0ec85f",
-            "reference": "edd507dacfacab7fcfcee6c5fcfad3335d0ec85f",
+            "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/40f552c019956f446553b19f7de2da2f9c74d730",
+            "reference": "40f552c019956f446553b19f7de2da2f9c74d730",
+            "shasum": ""
+        },
+        "require": {
+            "lib-pcre": ">=7.3",
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "ext-iconv": "Use iconv for best performance",
+            "ext-intl": "Use Intl for best performance",
+            "ext-mbstring": "Use Mbstring for best performance"
+        },
+        "time": "2014-06-17 08:23:06",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Patchwork": "class/",
+                "Normalizer": "class/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(Apache-2.0 or GPL-2.0)"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Extensive, portable and performant handling of UTF-8 and grapheme clusters for PHP",
+        "homepage": "https://github.com/nicolas-grekas/Patchwork-UTF8",
+        "keywords": [
+            "i18n",
+            "unicode",
+            "utf-8",
+            "utf8"
+        ]
+    },
+    {
+        "name": "intervention/image",
+        "version": "2.0.5",
+        "version_normalized": "2.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Intervention/image.git",
+            "reference": "fc0c20277260f09aa0bd172d66d8b39957c50078"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Intervention/image/zipball/fc0c20277260f09aa0bd172d66d8b39957c50078",
+            "reference": "fc0c20277260f09aa0bd172d66d8b39957c50078",
             "shasum": ""
         },
         "require": {
@@ -1865,7 +1865,7 @@
             "ext-imagick": "to use Imagick based image processing.",
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2014-06-16 09:52:34",
+        "time": "2014-06-30 15:30:03",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1902,12 +1902,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/creolab/laravel-modules.git",
-            "reference": "c9bcba745b65108d970bab70d8559ab82fa842c4"
+            "reference": "4a655a5c8c363780a2ef06edb0d9d0cd9795ebb3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/creolab/laravel-modules/zipball/c9bcba745b65108d970bab70d8559ab82fa842c4",
-            "reference": "c9bcba745b65108d970bab70d8559ab82fa842c4",
+            "url": "https://api.github.com/repos/creolab/laravel-modules/zipball/4a655a5c8c363780a2ef06edb0d9d0cd9795ebb3",
+            "reference": "4a655a5c8c363780a2ef06edb0d9d0cd9795ebb3",
             "shasum": ""
         },
         "require": {
@@ -1920,7 +1920,7 @@
         "suggest": {
             "way/generators": "Required for modules:generate functionality."
         },
-        "time": "2014-06-11 12:06:40",
+        "time": "2014-06-27 22:07:57",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
